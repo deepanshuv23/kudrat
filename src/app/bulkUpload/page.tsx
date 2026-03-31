@@ -139,6 +139,7 @@ export default function BatteryMonitor() {
 
     for (let i = 0; i < files.length; i++) {
       const file = files[i];
+      if (!file) continue;
       setFileStatuses(prev => prev.map((f, index) => 
         index === i ? { ...f, status: 'processing', progress: 0 } : f
       ));
